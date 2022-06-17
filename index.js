@@ -52,7 +52,12 @@ btn.addEventListener('click', (e) =>{
     const inputValue= inputCard.value;
     pizzaFind = pizzas.find((pizza) => pizza.id == inputValue)
     if(!pizzaFind){
-        alert('Ingresa un valor valido')
+        alert('Ingresa un valor valido');
+        inputCard.value= '';
+        imgCard.removeChild(imgCard.firstChild);
+        divCard.removeChild(nameCard);
+        divCard.removeChild(ingredientesCard);
+        divCard.removeChild(precioCard);
     }else{
         const imagen= document.createElement('img');
         imagen.setAttribute('src',pizzaFind.imagen);
